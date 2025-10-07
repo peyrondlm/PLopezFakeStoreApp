@@ -20,6 +20,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -28,6 +29,8 @@ import com.example.fakestoreapp.models.Product
 import com.example.fakestoreapp.models.Rating
 import com.example.fakestoreapp.ui.theme.FakeStoreAppTheme
 import com.example.fakestoreapp.ui.theme.ProductCardBackground
+import com.example.fakestoreapp.ui.theme.TextPrimary
+import com.example.fakestoreapp.ui.theme.TextSecondary
 
 
 @Composable
@@ -64,14 +67,17 @@ fun ProductCard(
         ) {
             Text(
                 text = product.title,
-                maxLines = 3,
+                maxLines = 2,
                 overflow = TextOverflow.Ellipsis,
-                style = MaterialTheme.typography.bodyLarge
+                style = MaterialTheme.typography.bodyLarge,
+                color = TextPrimary
             )
         }
         Text(
             text = "$${product.price}",
-            style = MaterialTheme.typography.titleMedium
+            fontWeight = FontWeight.Thin,
+            style = MaterialTheme.typography.titleMedium,
+            color = TextSecondary
         )
     }
 }

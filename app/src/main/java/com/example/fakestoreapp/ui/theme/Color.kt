@@ -13,3 +13,7 @@ val Pink40 = Color(0xFF7D5260)
 val ProductCardBackground = Color(0xFFDBC7C0)
 
 val Background = Color(0xFFF3EDE8)
+
+val TextPrimary = Color(0xFF3E2723)
+
+val TextSecondary = Color(0xFF6D4C41)
