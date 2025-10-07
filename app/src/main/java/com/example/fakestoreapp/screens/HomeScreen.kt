@@ -1,6 +1,7 @@
 package com.example.fakestoreapp.screens
 
 import android.util.Log
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
@@ -22,6 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import com.example.fakestoreapp.components.ProductCard
 import com.example.fakestoreapp.models.ProductViewModel
+import com.example.fakestoreapp.ui.theme.Background
 import com.example.fakestoreapp.ui.theme.ProductDetailScreenRoute
 
 @Composable
@@ -50,11 +52,20 @@ fun HomeScreen(
     }
 
     if (loading) {
-        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(Background),
+            contentAlignment = Alignment.Center
+        ) {
             CircularProgressIndicator()
         }
     } else {
-        LazyColumn(modifier = Modifier.fillMaxSize()) {
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(Background)
+        ) {
             items(viewModel.products) { product ->
                 ProductCard(
                     product = product,
